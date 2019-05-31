@@ -26,9 +26,9 @@ def send_mail(file_new):
     mail_body = f.read()
     f.close()
     stmpserver = 'smtp.qq.com'
-    user = "975216162@qq.com"
+    user = ""
     # 这里填邮箱的授权码
-    password = "jizikjnmxtfibegf"
+    password = ""
     subject = '自动化测试报告'
 
     # 构造MIMEMultipart对象做为根容器
@@ -46,8 +46,8 @@ def send_mail(file_new):
 
     # 设置根容器属性
     msgRoot['Subject'] = Header(subject, 'utf-8')
-    msgRoot['From'] = '975216162@qq.com'
-    msgRoot['To'] = 'chenyongyan1525@dingtalk.com'
+    msgRoot['From'] = ''
+    msgRoot['To'] = ''
 
     # 连接发送邮件
     smtp = smtplib.SMTP()

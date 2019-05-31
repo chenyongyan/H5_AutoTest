@@ -1,14 +1,6 @@
 {
   "mysql":{
-    "host":"192.168.100.200",
-    "user":"root",
-    "pwd":"123456",
-    "京东预存款db":"saas_customer_master_20190326",
-    "清空收货地址db":"saas_member_master_20190326",
-    "清空所有订单db":"saas_trade_master_20193026",
-    "清空所有订单sql":"DELETE FROM saas_trade_master_20193026.TRD_ExchangeOrder",
-    "商家菜籽db":"saas_customer_master_20190326",
-    "查询新订单号db":"saas_customer_master_20190326",
+
     "查询京东AccessToken":"SELECT AccessToken FROM saas_goods_master_20190326.JD_AccessToken WHERE Uid = '4333766990'",
     "查询商家菜籽sql":"SELECT CUS_CustomerPreDeposit.`Value` FROM saas_customer_master_20190326.CUS_CustomerPreDeposit WHERE CUS_CustomerPreDeposit.CustomerID = 'aa1e0072-7f27-0c09-b0af-36f24dd5900a';",
     "查询新订单号sql":"select  TRD_ExchangeOrder.PartnerOrderNO from saas_trade_master_20193026.TRD_ExchangeOrder WHERE TRD_ExchangeOrder.UserID = 'aa2d007b-56fb-d97a-df70-dc894f4db633'  ORDER BY CreateTime DESC LIMIT 1",
