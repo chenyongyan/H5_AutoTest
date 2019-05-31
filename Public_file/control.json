@@ -1,0 +1,96 @@
+{
+  "mysql":{
+    "host":"192.168.100.200",
+    "user":"root",
+    "pwd":"123456",
+    "京东预存款db":"saas_customer_master_20190326",
+    "清空收货地址db":"saas_member_master_20190326",
+    "清空所有订单db":"saas_trade_master_20193026",
+    "清空所有订单sql":"DELETE FROM saas_trade_master_20193026.TRD_ExchangeOrder",
+    "商家菜籽db":"saas_customer_master_20190326",
+    "查询新订单号db":"saas_customer_master_20190326",
+    "查询京东AccessToken":"SELECT AccessToken FROM saas_goods_master_20190326.JD_AccessToken WHERE Uid = '4333766990'",
+    "查询商家菜籽sql":"SELECT CUS_CustomerPreDeposit.`Value` FROM saas_customer_master_20190326.CUS_CustomerPreDeposit WHERE CUS_CustomerPreDeposit.CustomerID = 'aa1e0072-7f27-0c09-b0af-36f24dd5900a';",
+    "查询新订单号sql":"select  TRD_ExchangeOrder.PartnerOrderNO from saas_trade_master_20193026.TRD_ExchangeOrder WHERE TRD_ExchangeOrder.UserID = 'aa2d007b-56fb-d97a-df70-dc894f4db633'  ORDER BY CreateTime DESC LIMIT 1",
+    "查询用户订单总数sql":"SELECT COUNT(*) FROM saas_trade_master_20193026.TRD_ExchangeOrder",
+    "清空收货地址sql":"DELETE FROM saas_member_master_20190326.MEM_UserAddress WHERE MEM_UserAddress.UserID = 'aa2d007b-56fb-d97a-df70-dc894f4db633'",
+    "加菜籽sql":"UPDATE saas_customer_master_20190326.CUS_CustomerPreDeposit SET CUS_CustomerPreDeposit.Value = '9000000' WHERE CustomerID='aa1e0072-7f27-0c09-b0af-36f24dd5900a'",
+    "清空菜籽sql":"UPDATE saas_customer_master_20190326.CUS_CustomerPreDeposit SET CUS_CustomerPreDeposit.Value = '0' WHERE CustomerID='aa1e0072-7f27-0c09-b0af-36f24dd5900a'"
+  },
+
+  "url":{
+    "京东预付款URL":"https://bizapi.jd.com/api/price/selectBalance",
+    "B端URL":"https://yuntaidev01.youcaihua.net/pw/api/v1/Authorize/MobileManageAdmin?AppID=APP0000012bffc6d7355dcda3&PlatformFunction=PointsMall&Role=Admin&Sign=efc06360fe399bdd04d799f817458d0a59aa0faf&TimeStamp=1553822137&type=mobile",
+    "C端URL":"http://yuntaidev01.youcaihua.net/pw/api/v1/Authorize/Client?AppID=APP0000012bffc6d7355dcda3&TimeStamp=0&PlatformFunction=PointsMall&OpenID=e700703b-723b-4806-8a2f-21ca8f177295&BalanceCode=Integral"
+  },
+
+  "B端页面元素":{
+    "菜籽余额":"#app > div > div > div.main > div.main__card > p.canola-right > span",
+    "充值":"#app > div > div > div.main > div.main__card > p.canola-right > a",
+    "礼品管理":"#app > div > div > div.main > div.main__menu > div:nth-child(1)",
+    "兑换订单":"#app > div > div > div.main > div.main__menu > div:nth-child(2)",
+    "礼品补给":"#app > div > div > div.main > div.main__menu > div:nth-child(3)",
+    "资产管理":"#app > div > div > div.main > div.main__menu > div:nth-child(4)",
+    "商城设置":"#app > div > div > div.main > div.main__menu > div:nth-child(5)",
+    "待发货列表商品1":"#app > div > div > div > div.van-tabs__content > div:nth-child(1) > div > div.van-pull-refresh.item-first > div > div.order-tab__tab-content.van-list > div:nth-child(1)",
+    "B端待发货列表新增商品单号":"#app > div > div > div > div.van-tabs__content > div:nth-child(1) > div > div.van-pull-refresh.item-first > div > div.order-tab__tab-content.van-list > div:nth-child(1) > a > div.item-list > div.item-list__right > div:nth-child(4) > span:nth-child(2)",
+    "B端支付菜籽":"#app > div > div > div.goods-info > div > div > div > p > span.right"
+
+  },
+
+  "C端页面元素":{
+    "用户积分":"#app > div > div.integral > div.user-integral > div.integral-text > div",
+    "收货地址页面":"#app > div > div.address-content.van-popup.van-popup--bottom > div",
+    "订单":"#app > div > div.integral > div.integral-cont",
+    "积分排序":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > ul > li.order-sort",
+    "查看订单":"#app > div > div > button",
+    "待发货列表商品1":"#app > div > div.my-order > div.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > div.tab-list.van-list > div:nth-child(1)",
+    "收货地址信息":"#app > div > div.order-details > div.order-details__site > p",
+    "C端待发货列表新增商品单号":"#app > div > div.my-order > div.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > div.tab-list.van-list > div:nth-child(1) > a > div > div.order-list__details > p.goods.item > span.goods__name"
+  },
+
+  "商品": {
+    "goods1":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > li:nth-child(1)",
+    "goods1_pay":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > li:nth-child(1) > div.pro-text > p.pro-integral",
+    "goods2":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > li:nth-child(2)",
+    "goods2_pay":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > li:nth-child(2) > div.pro-text > p.pro-integral",
+    "goods3":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > li:nth-child(3)",
+    "goods3_pay":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > li:nth-child(3) > div.pro-text > p.pro-integral",
+    "goods4":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > li:nth-child(4)",
+    "goods4_pay":"#app > div > div.content.van-tabs.van-tabs--line > div.van-tabs__content > div:nth-child(1) > div > div > div > li:nth-child(4) > div.pro-text > p.pro-integral",
+    "商品价格":"#app > div > div.affirm-order > div.goods-info > div.goods-info__list > p.goods-integral.item > span:nth-child(2)",
+    "商品邮费":"#app > div > div.affirm-order > div.goods-info > div.goods-info__list > p:nth-child(3) > span:nth-child(2)",
+    "商品积分价格和积分邮费之和":"#app > div > div.affirm-order > div.goods-info > div.goods-info__footer > p > span",
+    "点击规格": "#app > div > div:nth-child(2) > ul > li:nth-child(1) > div > div",
+    "输入商品数量":"#app > div > div:nth-child(4) > div.pro-cont > div > div.specification > div > div > input",
+    "保存": "#app > div > div:nth-child(4) > div.pro-cont > div > div.pro-clear > button",
+    "立即兑换":"#app > div > button",
+    "立即兑换文本":"#app > div > button > span",
+    "兑换":"#app > div > div.affirm-order > div.goods-info > div.goods-info__footer > button",
+    "规格价格":"#app > div > div:nth-child(4) > div.pro-cont > div > div.pro-clear > p > span",
+    "规格1":"#app > div > div:nth-child(4) > div.pro-cont > div > div.specification > button.choose-size.active",
+    "规格2":"#app > div > div:nth-child(4) > div.pro-cont > div > div.specification > button:nth-child(2)",
+    "库存不足":"body > div.van-toast.van-toast--text.van-toast--middle > div"
+  },
+
+  "收货地址": {
+    "订单页面修改地址":"#app > div > div.affirm-order > div.goods-info > div.goods-info__user-info > h3 > i",
+    "收货地址":"#app > div > div:nth-child(2) > ul > li:nth-child(2) > div > p",
+    "点击收货地址": "#app > div > div:nth-child(2) > ul > li:nth-child(2) > div",
+    "收货人姓名": "#app > div > div.address-content.van-popup.van-popup--bottom > div > div.info-cont.name > input[type='text']",
+    "手机号码": "#app > div > div.address-content.van-popup.van-popup--bottom > div > div:nth-child(3) > input[type='number']",
+    "所在地区": "#app > div > div.address-content.van-popup.van-popup--bottom > div > div:nth-child(4)",
+    "省": "body > div.ych-area.van-popup.van-popup--bottom > div > div.van-tabs__wrap.van-hairline--top-bottom > div > div:nth-child(2)",
+    "广东省": "body > div.ych-area.van-popup.van-popup--bottom > div > div.van-tabs__content.van-tabs__content--animated > div > div:nth-child(1) > div > div:nth-child(19) > div",
+    "市": "body > div.ych-area.van-popup.van-popup--bottom > div > div.van-tabs__wrap.van-hairline--top-bottom > div > div:nth-child(3)",
+    "广州市": "body > div.ych-area.van-popup.van-popup--bottom > div > div.van-tabs__content.van-tabs__content--animated > div > div:nth-child(2) > div > div:nth-child(1) > div",
+    "区": "body > div.ych-area.van-popup.van-popup--bottom > div > div.van-tabs__wrap.van-hairline--top-bottom > div > div:nth-child(4)",
+    "天河区": "body > div.ych-area.van-popup.van-popup--bottom > div > div.van-tabs__content.van-tabs__content--animated > div > div:nth-child(3) > div > div:nth-child(1) > div",
+    "镇":"body > div.ych-area.van-popup.van-popup--bottom > div > div.van-tabs__wrap.van-hairline--top-bottom > div > div.van-tab.van-tab--active",
+    "详细地址": "#app > div > div.address-content.van-popup.van-popup--bottom > div > div.info-cont.detail-address > textarea",
+    "保存": "#app > div > div.address-content.van-popup.van-popup--bottom > div > button"
+  }
+
+
+
+}
